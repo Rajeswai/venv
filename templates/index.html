@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Internship Portal | Home</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+      background-color: #ffffff;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      margin-top: 0;
+      background: linear-gradient(rgba(13, 71, 161, 0.6), rgba(13, 71, 161, 0.6)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 80vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 15px;
+    }
+
+    /* ===== Sections ===== */
+    .section-title {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #0d47a1;
+      letter-spacing: 0.5px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      border-radius: 12px 12px 0 0;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-title {
+      color: #0d47a1;
+      font-weight: 600;
+    }
+
+    .feature-box {
+      background: #e3f2fd;
+      padding: 25px;
+      border-radius: 10px;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    .feature-box:hover {
+      background: #bbdefb;
+      transform: translateY(-5px);
+    }
+
+    .testimonial {
+      background-color: #f5f9ff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .testimonial h5 {
+      color: #0d47a1;
+      margin-top: 15px;
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .join {
+      background: linear-gradient(90deg, #0d47a1, #1976d2);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      border-radius: 8px;
+    }
+
+    .join h2 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .join .btn {
+      background-color: #fff;
+      color: #0d47a1;
+      font-weight: 600;
+      border-radius: 30px;
+      padding: 12px 30px;
+      transition: 0.3s;
+    }
+
+    .join .btn:hover {
+      background-color: #bbdefb;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: linear-gradient(90deg, #0d47a1, #002171);
+      color: #fff;
+      padding: 60px 0;
+    }
+
+    .footer h5 {
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .footer h5::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 40px;
+      height: 2px;
+      background: #fff;
+    }
+
+    .footer a {
+      color: #e0e0e0;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+    .footer .social-icons a {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 15px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: #ffca28;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 10px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .footer {
+        text-align: center;
+      }
+
+      .footer .col-md-4 {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  {% extends 'base.html' %}
+{% block title %}About Us | Virtual Internship{% endblock %}
+
+{% block content %}
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Welcome to Virtual Internship Portal</h1>
+      <p>Empowering Students. Connecting Opportunities. Building Futures.</p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-title">Why Choose Us</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="">
+            <div class="card-body text-center">
+              <h5 class="card-title">Seamless Internship Management</h5>
+              <p>Easily track tasks and progress using our intuitive dashboard.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80" alt="">
+            <div class="card-body text-center">
+              <h5 class="card-title">Interactive Virtual Experience</h5>
+              <p>Gain practical knowledge and collaborate online from home.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="">
+            <div class="card-body text-center">
+              <h5 class="card-title">Career-Oriented Skill Growth</h5>
+              <p>Strengthen your portfolio and boost employability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join Us -->
+  <section class="join my-5">
+    <div class="container">
+      <h2>Start Your Internship Journey Today</h2>
+      <p>Join thousands of students gaining valuable experience online.</p>
+      <a href="#" class="btn">Join Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <h4 class="fw-bold" style="color: #00ccff;">Virtual Internship System</h4>
+          <p>The platform connects students and companies through an easy internship process and verified certificates.</p>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold border-bottom pb-2">USEFUL LINKS</h6>
+          <ul class="list-unstyled mt-3">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Internships</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold border-bottom pb-2">CONTACT US</h6>
+          <ul class="list-unstyled mt-3">
+            <li><i class="bi bi-geo-alt-fill text-info me-2"></i> Akankha Road, Newtown, Kolkata</li>
+            <li><i class="bi bi-telephone-fill text-info me-2"></i> +91 0123456789</li>
+            <li><i class="bi bi-envelope-fill text-info me-2"></i> virtualinternship@gmail.com</li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-bold border-bottom pb-2">POLICIES</h6>
+          <ul class="list-unstyled mt-3">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">User Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="background: #001020; text-align: center; padding: 15px 0;">
+      © 2025 <strong>Virtual Internship System</strong> | Designed & Developed by Team VIS
+    </div>
+  </footer>
+    {% endblock %}
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

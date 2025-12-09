@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Internship | Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://static.vecteezy.com/system/resources/previews/023/826/514/large_2x/ai-artificial-intelligence-humanoid-side-portrait-view-with-blue-and-orange-vibrant-neon-and-copy-space-artificial-intelligence-technology-concept-ai-generated-illustration-free-photo.jpg') no-repeat center center/cover;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 10px;
+    }
+
+    .form-container {
+      width: 500px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px 40px 50px; /* ✅ extra bottom padding added */
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+      color: white;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      border: none;
+      color: white;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 50px;
+      width: 100%;
+      transition: 0.3s;
+      margin-top: 5px;
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-2px);
+    }
+
+    .btn-back {
+      background: #6c757d;
+      color: white;
+      border: none;
+      width: 100%;
+      border-radius: 50px;
+      padding: 10px 20px;
+      margin-top: 35px; /* ✅ increased spacing */
+      transition: 0.3s;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .btn-back:hover {
+      background: #5a6268;
+      transform: translateY(-2px);
+    }
+
+    .alert {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Add New Internship</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+      <div class="mb-3">
+        <label>Internship Title</label>
+        <input type="text" name="title" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Description</label>
+        <textarea name="description" class="form-control" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label>Duration</label>
+        <input type="text" name="duration" class="form-control" placeholder="e.g. 3 Months" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Stipend</label>
+        <input type="text" name="stipend" class="form-control" placeholder="e.g. ₹5000">
+      </div>
+
+      <div class="mb-3">
+        <label>Posted By</label>
+        <input type="text" name="posted_by" class="form-control" placeholder="Admin name" required>
+      </div>
+
+      <button type="submit" class="btn-submit">Add Internship</button>
+    </form>
+
+    <!-- ✅ Back Button -->
+    <a href="{{ url_for('admin_dashboard') }}" class="btn-back">← Back to Dashboard</a>
+
+  </div>
+</body>
+</html>

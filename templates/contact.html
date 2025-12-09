@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Virtual Internship</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* Navbar */
+    .navbar {
+      background-color: #0a4aa3;
+    }
+    .navbar-brand {
+      font-weight: 600;
+      color: white !important;
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 35px;
+      margin-right: 10px;
+    }
+    .navbar-nav .nav-link {
+      color: white !important;
+      transition: 0.3s;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-image: url("https://static.vecteezy.com/system/resources/previews/023/826/514/large_2x/ai-artificial-intelligence-humanoid-side-portrait-view-with-blue-and-orange-vibrant-neon-and-copy-space-artificial-intelligence-technology-concept-ai-generated-illustration-free-photo.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      padding: 100px 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.92);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      width: 500px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(6px);
+    }
+
+    .contact-card h2 {
+      text-align: center;
+      color: #004aad;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .btn-primary {
+      background-color: #004aad;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+    }
+    .btn-primary:hover {
+      background-color: #003b8c;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      border: none;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(180deg, #001f3f, #00132b);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer h4, .footer h6 {
+      color: #00ccff;
+    }
+
+    .footer h6 {
+      font-weight: 600;
+      border-bottom: 2px solid #00ccff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .footer a {
+      color: #e0e0e0;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #fff;
+    }
+
+    .footer i {
+      color: #00ccff;
+    }
+
+    @media (max-width: 768px) {
+      .contact-card {
+        width: 100%;
+        height: auto;
+      }
+      .footer {
+        text-align: center;
+      }
+      .footer .col-md-4, .footer .col-md-3, .footer .col-md-2 {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  {% extends 'base.html' %}
+  {% block title %}Contact Us | Virtual Internship{% endblock %}
+
+  {% block content %}
+  <!-- Contact Section -->
+  <div class="contact-section">
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <div class="contact-card">
+        <h2>Contact Us</h2>
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-control" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="6" placeholder="Write your message here..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mt-3">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Map -->
+      <div class="contact-card">
+        <h2>Our Location</h2>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3685.698825479308!2d88.46537487404388!3d22.515220035192106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275409ad4c47b%3A0x37c872a7e26b37cb!2sTravarsa%20Private%20Limited!5e0!3m2!1sen!2sin!4v1730289536957!5m2!1sen!2sin" 
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-4 mb-4">
+          <h4 class="fw-bold">Virtual Internship System</h4>
+          <p style="font-size: 14px; line-height: 1.8;">
+            The Virtual Internship System connects students and companies through an online platform 
+            that simplifies the internship process. Students can apply for internships, track progress, 
+            and gain valuable experience to enhance their professional skills.
+          </p>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <h6>USEFUL LINKS</h6>
+          <ul class="list-unstyled mt-3">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Internships</a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <h6>CONTACT US</h6>
+          <ul class="list-unstyled mt-3" style="font-size: 14px;">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill me-2"></i>Akankha Road, Newtown, Kolkata, India</li>
+            <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+91 0123456789</li>
+            <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>virtualinternship@gmail.com</li>
+          </ul>
+          <p class="mt-3"><strong>Visitor Count</strong><br><span style="font-size: 20px;">1,25,450</span></p>
+        </div>
+
+        <div class="col-md-2 mb-4">
+          <h6>POLICIES</h6>
+          <ul class="list-unstyled mt-3">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">User Guidelines</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  {% endblock %}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

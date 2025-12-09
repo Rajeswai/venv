@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Applications | Virtual Internship</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("https://static.vecteezy.com/system/resources/previews/023/826/514/large_2x/ai-artificial-intelligence-humanoid-side-portrait-view-with-blue-and-orange-vibrant-neon-and-copy-space-artificial-intelligence-technology-concept-ai-generated-illustration-free-photo.jpg") 
+        no-repeat center center/cover;
+      color: #fff;
+      min-height: 100vh;
+      padding-top: 70px;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 191, 255, 0.3);
+    }
+
+    .navbar-brand {
+      color: #00b0ff !important;
+      font-weight: 600;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      text-shadow: 0 0 10px rgba(0, 191, 255, 0.8);
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      width: 40px;
+      margin-right: 10px;
+      border-radius: 50%;
+      border: 2px solid #00b0ff;
+    }
+
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin-left: 10px;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #00b0ff !important;
+    }
+
+    /* Container */
+    .content-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
+      margin-top: 90px;
+    }
+
+    h2 {
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 0 15px rgba(0, 191, 255, 0.8);
+    }
+
+    /* Table */
+    .table {
+      color: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    thead {
+      background: rgba(0, 191, 255, 0.7) !important;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    tbody tr {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    tbody tr:hover {
+      background: rgba(0, 191, 255, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    /* Buttons */
+    .btn-primary,
+    .btn-success {
+      background: linear-gradient(135deg, #00b0ff, #0288d1);
+      border: none;
+      color: white;
+      border-radius: 25px;
+      padding: 6px 18px;
+      font-weight: 500;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+    }
+
+    .btn-primary:hover,
+    .btn-success:hover {
+      background: linear-gradient(135deg, #0288d1, #01579b);
+      transform: translateY(-2px);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #ff5252, #d32f2f);
+      border: none;
+      border-radius: 25px;
+      padding: 6px 18px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-danger:hover {
+      background: #b71c1c;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-primary {
+      color: #00b0ff;
+      border: 1px solid #00b0ff;
+      border-radius: 25px;
+      font-weight: 500;
+    }
+
+    .btn-outline-primary:hover {
+      background: #00b0ff;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(0, 191, 255, 0.5);
+      color: #fff;
+      border-radius: 25px;
+      padding: 10px 25px;
+      transition: 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 191, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Modal */
+    .modal-content {
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #1b3c73;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, #00b0ff, #0288d1);
+      color: white;
+      border-bottom: none;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+      padding: 12px 0;
+      font-size: 0.9rem;
+      border-radius: 10px 10px 0 0;
+      letter-spacing: 0.5px;
+      box-shadow: 0 -4px 20px rgba(0, 191, 255, 0.3);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .btn {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('admin_dashboard') }}">
+        <img src="https://hrchannels.com/Upload/avatar/20221021/134549938_Logo-Emblem-07202021-jpg.png" alt="Logo">
+        Virtual Internship
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('admin_dashboard') }}">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Applications Table -->
+  <div class="container content-container">
+    <h2 class="text-center mb-4">Internship Applications</h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered text-center align-middle">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Internship</th>
+            <th>CV / Image</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for app in applications %}
+          <tr>
+            <td>{{ app.name }}</td>
+            <td>{{ app.title }}</td>
+            <td>
+              {% if app.image != 'No Image' %}
+                <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#imageModal{{ app.application_id }}">
+                  View Image
+                </button>
+
+                <!-- Image Modal -->
+                <div class="modal fade" id="imageModal{{ app.application_id }}" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">{{ app.name }} - Submitted Work</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body text-center">
+                        <img src="{{ url_for('static', filename='uploads/' + app.image) }}" class="img-fluid shadow-sm" alt="Submitted Work">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% else %}
+                <span class="text-muted">No Image</span>
+              {% endif %}
+            </td>
+
+            <td>
+              <span class="{% if app.status == 'Accepted' %}text-success{% elif app.status == 'Pending' %}text-warning{% else %}text-danger{% endif %}">
+                {{ app.status }}
+              </span>
+            </td>
+
+            <td>
+              <a href="{{ url_for('accept_application', app_id=app.application_id) }}" class="btn btn-success btn-sm">Accept</a>
+              <a href="{{ url_for('delete_application', app_id=app.application_id) }}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-center mt-3">
+      <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary">← Back to Dashboard</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Virtual Internship System | All Rights Reserved
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
