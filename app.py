@@ -208,11 +208,13 @@ def update_status(id):
         filename = file.filename
         file.save(os.path.join('static/uploads', filename))  # folder must exist
 
-    cursor = mydb.cursor()
+    conn = get_db_connection()
+    cursor = conn.cursor()
     query = "UPDATE applied_internships SET status=%s, document=%s WHERE id=%s"
     cursor.execute(query, (status, filename, id))
-    mydb.commit()
+    conn.commit()
     cursor.close()
+    conn.close()
 
     flash("Internship status updated successfully!", "success")
     return redirect('/admin_dashboard')
